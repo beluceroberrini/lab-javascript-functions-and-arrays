@@ -29,17 +29,25 @@ function sumNumbers(numbers) {
 }
 
 
-// Iteration #3.1 Bonus:
+// Iteration #3.1 Bonus: ----------------------------------------
 function sum(numbers) {
   if(numbers.length === 0) return 0;
     let sum = 0;
     numbers.forEach(function(number){
       switch(typeof number){
         case 'number':
-
-
+          sum += number;
+          break;
+          case 'string':
+            sum += number.length;
+            break;
+            case 'boolean':
+              if(number) sum += 1;
+              break;
+              default:
+                throw new Error("Unsupported data type sir or ma'am");
+             
       }
-      sum += number.length;
     })
     return sum;
 
@@ -75,7 +83,7 @@ function averageWordLength(wordsArr) {
 
  }
 
-// Bonus - Iteration #4.1
+// Bonus - Iteration #4.1-----------------------------------------------------
 const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 function avg(mixedArr) {
   if(mixedArr.length === 0) return null;
@@ -105,14 +113,28 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(wordsUnique){
+  if(wordsUnique.length === 0) return null;
+  let newArr = [];
+  for(let i = 0; i < wordsUnique.length; i++){
+    if(!newArr.includes(wordsUnique[i])){
+      newArr.push(wordsUnique[i]);
+    }  
+  }
+  return newArr;
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+
+function doesWordExist(array, word) {
+  if(array.length === 0) return null; 
+   return array.includes(word);
+
+}
 
 
 
@@ -131,7 +153,36 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, word) {
+  let counter = 0;  
+  if(array.length === 0) return 0;
+  for(let i = 0; i < array.length; i++){
+    
+}
+return counter;
+
+
+
+  for(let i =0; i < array.length; i++){
+    if(array.includes(word)){
+      counter++;}
+      if(counter === 1) return 1;
+      if(counter === 5) return 5;
+  }
+    
+    
+    
+    
+  //   {
+  //   return 0;
+  // }else if(array.includes(word)){
+  //   return 1;
+  // }else if(array.includes(word) === 5){
+  //   return 5;
+  // }else{
+  //   return 0;
+  // }
+}
 
 
 
